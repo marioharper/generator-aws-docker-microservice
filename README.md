@@ -1,0 +1,1 @@
+# generator-aws-docker-microservice
