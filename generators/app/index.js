@@ -22,7 +22,10 @@ module.exports = class extends MyBase {
     this.fs.copyTpl(
       this.templatePath() + '/**',
       this.destinationPath(),
-      { title: this.options.appname }
+      { 
+        title: this.options.appname,
+        dockerImage: this.options.dockerImage
+      }
     );
 
     const mv = (from, to) => {
@@ -30,6 +33,7 @@ module.exports = class extends MyBase {
 		};
 
     mv('gitignore', '.gitignore');
+    mv('aws/gitignore', 'aws/.gitignore');
   }
 
   install() {
