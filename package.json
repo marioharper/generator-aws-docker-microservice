@@ -1,0 +1,14 @@
+{
+  "name": "generator-aws-docker-microservice",
+  "version": "0.1.0",
+  "description": "Scaffold out a Docker microservice in aws ELB.",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^1.0.1"
+  }
+}
