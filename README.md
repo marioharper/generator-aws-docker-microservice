@@ -14,5 +14,5 @@ $ npm link
 With [Yeoman](http://yeoman.io/).
 
 ```
-$ yo aws-docker-microservice
+$ yo aws-docker-microservice my-microservice-name
 ```
