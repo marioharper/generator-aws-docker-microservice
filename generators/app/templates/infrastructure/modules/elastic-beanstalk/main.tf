@@ -13,6 +13,18 @@ resource "aws_elastic_beanstalk_environment" "appEnv" {
 
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
+    name      = "IamInstanceProfile"
+    value     = "aws-elasticbeanstalk-ec2-role"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:environment"
+    name      = "ServiceRole"
+    value     = "aws-elasticbeanstalk-service-role"
+  }
+
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
     name      = "InstanceType"
     value     = "t2.nano"
   }
