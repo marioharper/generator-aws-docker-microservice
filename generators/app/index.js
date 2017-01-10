@@ -33,7 +33,6 @@ module.exports = class extends MyBase {
 		};
 
     mv('gitignore', '.gitignore');
-    mv('aws/gitignore', 'aws/.gitignore');
   }
 
   install() {

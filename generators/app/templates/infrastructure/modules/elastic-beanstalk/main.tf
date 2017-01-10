@@ -5,11 +5,17 @@ resource "aws_elastic_beanstalk_application" "app" {
   description = "tf-test-desc"
 }
 
-resource "aws_elastic_beanstalk_environment" "api" {
-  name                = "<%= title %>"
+resource "aws_elastic_beanstalk_environment" "appEnv" {
+  name                = "Default-Environment"
   tier                = "WebServer"
   application         = "${aws_elastic_beanstalk_application.app.name}"
   solution_stack_name = "64bit Amazon Linux 2016.09 v2.3.0 running Docker 1.11.2"
+
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
+    name      = "InstanceType"
+    value     = "t2.nano"
+  }
 
   setting {
     namespace = "aws:elasticbeanstalk:application:environment"
@@ -18,6 +24,6 @@ resource "aws_elastic_beanstalk_environment" "api" {
   }
 }
 
-output "api_cname" {
-  value = "${aws_elastic_beanstalk_environment.api.cname}"
+output "app_cname" {
+  value = "${aws_elastic_beanstalk_environment.appEnv.cname}"
 }
