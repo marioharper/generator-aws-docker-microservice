@@ -61,6 +61,10 @@ output "app_cname" {
   value = "${aws_elastic_beanstalk_environment.appEnv.cname}"
 }
 
-output "app_code" {
-  value = "elasticbeanstalk-${var.aws_region}-${var.aws_account_id}/${aws_s3_bucket_object.application_code.id}"
+output "app_code_s3_bucket" {
+  value = "elasticbeanstalk-${var.aws_region}-${var.aws_account_id}"
+}
+
+output "app_code_s3_key" {
+  value = "${aws_s3_bucket_object.application_code.id}"
 }

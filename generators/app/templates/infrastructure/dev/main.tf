@@ -22,6 +22,10 @@ output "app_cname" {
   value = "${module.elastic-beanstalk.app_cname}"
 }
 
-output "app_code" {
-  value = "${module.elastic-beanstalk.app_code}"
+output "app_code_s3_bucket" {
+  value = "${module.elastic-beanstalk.app_code_s3_bucket}"
+}
+
+output "app_code_s3_key" {
+  value = "${module.elastic-beanstalk.app_code_s3_key}"
 }
