@@ -25,3 +25,8 @@ $ yo aws-docker-microservice my-microservice-name
 ```
 $ ./build/deploy.sh
 ```
+### Deploy app
+```
+$ eb init "<app_name>" -r $AWS_DEFAULT_REGION -p "Docker 1.11.2"
+$ eb deploy
+```
