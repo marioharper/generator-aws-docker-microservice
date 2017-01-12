@@ -21,3 +21,7 @@ module "elastic-beanstalk" {
 output "app_cname" {
   value = "${module.elastic-beanstalk.app_cname}"
 }
+
+output "app_code" {
+  value = "${module.elastic-beanstalk.app_code}"
+}

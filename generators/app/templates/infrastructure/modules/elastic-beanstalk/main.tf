@@ -60,3 +60,7 @@ resource "aws_s3_bucket_object" "application_code" {
 output "app_cname" {
   value = "${aws_elastic_beanstalk_environment.appEnv.cname}"
 }
+
+output "app_code" {
+  value = "elasticbeanstalk-${var.aws_region}-${var.aws_account_id}/${aws_s3_bucket_object.application_code.id}"
+}
