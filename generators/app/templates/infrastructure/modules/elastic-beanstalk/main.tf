@@ -1,5 +1,19 @@
 variable "env" {}
 
+variable "aws_region" {}
+
+variable "project_name" {}
+
+variable "aws_account_id" {}
+
+variable "app_code_path" {
+  default = "../../"
+}
+
+variable "app_code_file" {
+  default = "Dockerrun.aws.json"
+}
+
 resource "aws_elastic_beanstalk_application" "app" {
   name        = "<%= title %>"
   description = "tf-test-desc"
@@ -34,6 +48,13 @@ resource "aws_elastic_beanstalk_environment" "appEnv" {
     name      = "ENV"
     value     = "${var.env}"
   }
+}
+
+resource "aws_s3_bucket_object" "application_code" {
+  bucket = "elasticbeanstalk-${var.aws_region}-${var.aws_account_id}"
+  key    = "${var.project_name}/${var.app_code_file}"
+  source = "${var.app_code_path}${var.app_code_file}"
+  etag   = "${md5(file("${var.app_code_path}${var.app_code_file}"))}"
 }
 
 output "app_cname" {

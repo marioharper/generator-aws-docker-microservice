@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e 
 
-cd ./infrastructure/dev
+BASEDIR=$(dirname "$0")
+BASEDIR=$PWD/$BASEDIR
+
+cd $BASEDIR/infrastructure/dev
 
 terraform remote config \
   -backend=s3 \
