@@ -2,9 +2,6 @@ var Generator = require('yeoman-generator');
 
 class MyBase extends Generator {
   // private methods here
-  helper() {
-    this.log('this is not called')
-  }
 }
 
 module.exports = class extends MyBase {
