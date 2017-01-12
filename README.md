@@ -21,6 +21,8 @@ $ cd my-microservice
 $ yo aws-docker-microservice my-microservice-name
 ```
 
+### Modify the `Dockerrun.aws.json` file to suit your container needs
+
 ### Deploy
 ```
 $ ./build/deploy.sh
