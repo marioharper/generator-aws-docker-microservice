@@ -21,12 +21,9 @@ $ cd my-microservice
 $ yo aws-docker-microservice my-microservice-name
 ```
 
-### Deploy infrastructure
+### Modify the `Dockerrun.aws.json` file to suit your container needs
+
+### Deploy
 ```
 $ ./build/deploy.sh
-```
-### Deploy app
-```
-$ eb init "<app_name>" -r $AWS_DEFAULT_REGION -p "Docker 1.11.2"
-$ eb deploy
 ```
