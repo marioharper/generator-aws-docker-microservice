@@ -33,5 +33,5 @@ fi
 # deploy app version 
 aws elasticbeanstalk update-environment \
   --application-name "<%= title %>" \
-  --environment-name "Default-Environment" \
+  --environment-name "<%= title %>" \
   --version-label "default"
