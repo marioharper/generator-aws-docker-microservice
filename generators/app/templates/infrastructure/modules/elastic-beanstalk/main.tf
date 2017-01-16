@@ -20,7 +20,7 @@ resource "aws_elastic_beanstalk_application" "app" {
 }
 
 resource "aws_elastic_beanstalk_environment" "appEnv" {
-  name                = "Default-Environment"
+  name                = "<%= title %>"
   tier                = "WebServer"
   application         = "${aws_elastic_beanstalk_application.app.name}"
   solution_stack_name = "64bit Amazon Linux 2016.09 v2.3.0 running Docker 1.11.2"
